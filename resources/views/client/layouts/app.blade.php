@@ -10,10 +10,11 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/ui/trumbowyg.min.css" integrity="sha512-Fm8kRNVGCBZn0sPmwJbVXlqfJmPC13zRsMElZenX6v721g/H7OukJd8XzDEBRQ2FSATK8xNF9UYvzsCtUpfeJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />	
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
+		
     <link rel="icon" href="{{ asset('assets/images/icon.png') }}"type="image/png" sizes="64x64">
 
-	<!-- Fav Icon -->
+	
 	<link rel="shortcut icon" type="image/x-icon" href="#" />
 </head>
 <body data-instant-intensity="mousedown">
@@ -35,7 +36,7 @@
 							<a class="nav-link" aria-current="page" href="#">Nos Services</a>
 						</li>   
 						<li class="nav-item">
-							<a class="nav-link" aria-current="page" href="#">Trouver un emploi</a>
+							<a class="nav-link" aria-current="page" href="{{ route('details') }}">Trouver un emploi</a>
 						</li>                                    
 					</ul>               
 					<a href="{{ route('account.createJob') }}" class="btn btn-primary mb-3 mb-sm-0">
@@ -71,11 +72,16 @@
   </div>
 </div>
 
-{{-- <footer class="bg-dark py-3 bg-2">
+<footer class=" lazy d-flex bg-image-style dark align-items-center " class=""
+data-bg="{{ asset('assets/images/77.png') }}">
+
 <div class="container">
-    <p class="text-center text-white pt-3 fw-bold fs-6"></p>
+    <p class="text-center text-white pt-3 fw-bold fs-6">
+		<a href="{{ route('home') }}"><img src="{{ asset('assets/images/zelij.png') }}" style="width: 200px; height: auto;" alt="pattern"> </a>
+		
+	</p>
 </div>
-</footer>  --}}
+</footer> 
 <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.bundle.5.1.3.min.js') }}"></script>
 <script src="{{ asset('assets/js/instantpages.5.1.0.min.js') }}"></script>

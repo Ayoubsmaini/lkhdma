@@ -1,8 +1,5 @@
 @charset "UTF-8";
-/* Colours */
-/* Fonts */
-/* Bootstrap Styles */
-:root {
+/* :root {
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-secondary: #6c757d;
@@ -32,7 +29,7 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
-}
+} */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -339,14 +336,7 @@ legend + * {
   outline-offset: -2px;
   -webkit-appearance: textfield;
 }
-/* rtl:raw:
-[type="tel"],
-[type="url"],
-[type="email"],
-[type="number"] {
-	direction: ltr;
-}
-*/
+
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -10185,3 +10175,152 @@ footer .nav-link {
     max-width: 33.33%;
   }
 }
+
+
+.section-2 {
+    background-color: #f2f2f2;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.circle i {
+    font-size: 2em;
+    color: #333;
+}
+
+/* h2 {
+    text-align: center;
+    margin-bottom: 40px;
+} */
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .col-md-3 {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+}
+
+.section-home {
+  background-color: #fff; 
+  padding: 3rem 0;
+}
+
+.circle-container {
+  text-align: center;
+  margin-bottom: 20px; 
+  opacity: 0; /* Start hidden */
+}
+
+.circle-container.animate {
+  animation: fadeIn 1s forwards; /* Fade-in animation for the container */
+  animation-delay: 0.5s; /* Delay to start the animation */
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: #dd1451;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  transform: scale(0); /* Start scaled down */
+}
+
+.circle-container.animate .circle {
+  animation: scaleUp 0.5s forwards; /* Scale-up animation */
+  animation-delay: 0.5s; /* Delay to start the animation */
+}
+
+.circle img {
+  width: 70%;
+  height: 70%;
+  object-fit: cover; 
+  border-radius: 20%;
+  opacity: 0; /* Start hidden */
+}
+
+.circle-container.animate .circle img {
+  animation: fadeIn 1s forwards; /* Fade-in animation for the image */
+  animation-delay: 1s; /* Delay to start the animation */
+}
+
+.circle-text {
+  margin-top: 10px; 
+  color: #0e917d; 
+  font-size: 1em; 
+  font-weight: bold;
+  opacity: 0; /* Start hidden */
+}
+
+.circle-container.animate .circle-text {
+  animation: fadeIn 1s forwards; /* Fade-in animation for the text */
+  animation-delay: 1.5s; /* Delay to start the animation */
+}
+
+@keyframes scaleUp {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #fff; 
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+}
+
+@media (max-width: 768px) {
+  .col-md-3 {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+}
+
+
+@keyframes moveUpDown {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(20px); 
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+.moving-image {
+  animation: moveUpDown 3s infinite; 
+}
+

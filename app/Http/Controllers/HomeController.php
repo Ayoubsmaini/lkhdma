@@ -34,4 +34,7 @@ class HomeController extends Controller
             'newCategories' => $newCategories
         ]);
     }
+    public function details(){
+        return view('client.details');
+    }
 }

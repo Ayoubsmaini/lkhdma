@@ -13,8 +13,9 @@
                             <div class="d-flex justify-content-between  ">
                                 <h1 class="h3 text-danger">S'inscrire</h1>
                                 <a href="{{ route('home') }}">
-                                    <img class="mb-5" src="{{ asset('assets/images/logo.png') }}" style="width: 100px; height: auto;" alt="">
+                                    <img class="mb-5" src="{{ asset('assets/images/logo.png') }}" style="width: 140px; height: auto;" alt="">
                                 </a>
+                              
                             </div>
                         </div>
                         
