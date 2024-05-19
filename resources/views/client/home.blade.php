@@ -1,6 +1,6 @@
 @extends('client.layouts.app')
 @section('main')
-    <section class="section-0 lazy d-flex bg-image-style dark align-items-center " class=""
+    <section class="section-0 lazy d-flex bg-image-style  align-items-center "
         data-bg="{{ asset('assets/images/77.jpg') }}">
         <div class="container">
             <div class="row">
