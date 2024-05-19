@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-lg-7 col-xl-8">
-                    <h1 class="mb-3">Trouvez Votre Voie Professionnelle</h1>
+                    <h1 class="mb-3">Explorez Vos Options Professionnelles</h1>
                     <p class="mb-4">Trouvez la solution qui correspond parfaitement à vos besoins</p>
                     <div class="banner-btn mt-3 mt-md-4">
                         @if (auth()->check())
