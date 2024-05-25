@@ -1,7 +1,6 @@
 @extends('client.layouts.app')
 @section('main')
-    <section class="section-0 lazy d-flex bg-image-style  align-items-center "
-        data-bg="{{ asset('assets/images/77.jpg') }}">
+    <section class="section-0 lazy d-flex bg-image-style  align-items-center " data-bg="{{ asset('assets/images/77.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-lg-7 col-xl-8">
@@ -112,7 +111,7 @@
                         <div class="circle">
                             <img src="{{ asset('assets/images/a.png') }}" class="img-fluid">
                         </div>
-                        <p class="circle-text">Savoir-faire </p>
+                        <p class="circle-text">Expertise </p>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -172,7 +171,7 @@
             </div>
         </div>
     </section>
-    <section class="section-1  py-5">
+    <section class="section-1 py-5">
         <div class="container">
             <h3 class="textR text-center">Derniers emplois</h3>
             <div class="row pt-5">
@@ -182,32 +181,32 @@
                             @if ($latestJobs->isNotEmpty())
                                 @foreach ($latestJobs as $latestJob)
                                     <div class="col-md-4">
-                                        <div class="card border p-3 mb-4">
+                                        <div class="card mb-4">
+                                            <div class="d-flex justify-content-between text-center align-items-center card-header bg-R1 text-uppercase fs-5">
+                                                <div >{{ $latestJob->title }}</div>
+                                                <a href="{{ route('jobDetail', $latestJob->id) }}" class="btn btn-primary btn-lg">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-up-right" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5"/>
+                                                        <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0z"/>
+                                                      </svg>
+                                                </a>
+                                            </div>
                                             <div class="card-body">
-                                                <h3 class="border-0 textU text-center fs-5 mb-3 pb-2 mb-0">
-                                                    {{ $latestJob->title }}</h3>
-
-
-                                                <div class="bg-light p-3 border" style="border-radius: 10px;">
-                                                    <p class="mb-0">
-                                                        <span class="fw-bolder">Lieu : </span>
-                                                        <span class="ps-1">{{ $latestJob->location }}</span>
-                                                    </p>
-                                                    <p class="mb-0">
-                                                        <span class="fw-bolder">Type d'emploi : </span>
-                                                        <span class="ps-1">{{ $latestJob->jobType->name }}</span>
-                                                    </p>
-                                                    @if (!is_null($latestJob->salary))
-                                                        <p class="mb-0">
-                                                            <span class="fw-bolder">Salaire : </span>
-                                                            <span class="ps-1">{{ $latestJob->salary }}</span> DH
-                                                        </p>
-                                                    @endif
-                                                </div>
-                                                <div class="d-grid mt-3">
-                                                    <a href="{{ route('jobDetail', $latestJob->id) }}"
-                                                        class="btn btn-primary btn-lg">Details</a>
-                                                </div>
+                                                <table class="table  mb-0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center  text-uppercase"> {{ $latestJob->jobType->name }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-center"> {{ $latestJob->location }}</td>
+                                                        </tr>
+                                                        @if (!is_null($latestJob->salary))
+                                                            <tr>
+                                                                <td class="text-center fs-5 bg-R1"> {{ $latestJob->salary }} DH</td>
+                                                            </tr>
+                                                        @endif
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
@@ -219,6 +218,8 @@
             </div>
         </div>
     </section>
+    
+    
 
 @endsection
 
@@ -230,6 +231,7 @@
             rootMargin: "0px",
             threshold: 0.1
         };
+
         function observerCallback(entries, observer) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

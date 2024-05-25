@@ -121,6 +121,9 @@ h2, .h2 {
   color: #dd1451;
 
 }
+.bg-R1{
+  color: #dd1451;
+}
 h3, .h3 {
   font-size: calc(1.3rem + 0.6vw);
 }
@@ -10244,7 +10247,7 @@ footer .nav-link {
 
 .circle-text {
   margin-top: 10px; 
-  color: #0e917d; 
+  color:  #dd1451; 
   font-size: 1em; 
   font-weight: bold;
   opacity: 0; /* Start hidden */
