@@ -1,7 +1,7 @@
 @extends('client.layouts.app')
 
 @section('main')
-<section class="section-5 bg-2">
+<section class="section-5 ">
     <div class="container ">
       
         <div class="row">
@@ -12,17 +12,17 @@
                 @include('client.message')
 
                 <form action="" method="post" id="createJobForm" name="createJobForm">
-                    <div class="card border-0 shadow mb-4 ">
+                    <div class="card border mb-4 ">
                         <div class="card-body card-form p-4">
-                            <h3 class="fs-4 mb-1">Détails de l'emploi</h3>
+                            <h3 class="fs-4 textR mb-1">Détails de l'emploi</h3>
                             <div class="row">
                                 <div class="col-md-6 mb-4">
-                                    <label for="" class="mb-2">Titre<span class="req">*</span></label>
+                                    <label for="" class="mb-2">Titre</label>
                                     <input type="text" placeholder="Titre de l'emploi" id="title" name="title" class="form-control">
                                     <p></p>
                                 </div>
                                 <div class="col-md-6 mb-4">
-                                    <label for="" class="mb-2">Catégorie<span class="req">*</span></label>
+                                    <label for="" class="mb-2">Catégorie</label>
                                     <select name="category" id="category" class="form-select">
                                         <option value="">Sélectionner une catégorie</option>
                                         @if ($categories->isNotEmpty())
@@ -37,7 +37,7 @@
 
                             <div class="row">
                                 <div class="col-md-6 mb-4">
-                                    <label for="" class="mb-2">Type de poste<span class="req">*</span></label>
+                                    <label for="" class="mb-2">Type de poste</label>
                                     <select name="jobType" id="jobType" class="form-select">
                                         <option value="">Sélectionner le type de poste</option>
                                         @if ($jobTypes->isNotEmpty())
@@ -49,7 +49,7 @@
                                     <p></p>
                                 </div>
                                 <div class="col-md-6 mb-4">
-                                    <label for="" class="mb-2">Nombre de postes<span class="req">*</span></label>
+                                    <label for="" class="mb-2">Nombre de postes</label>
                                     <input type="number" min="1" placeholder="Nombre de postes" id="vacancy" name="vacancy" class="form-control">
                                     <p></p>
                                 </div>
@@ -62,33 +62,27 @@
                                 </div>
 
                                 <div class="mb-4 col-md-6">
-                                    <label for="" class="mb-2">Lieu<span class="req">*</span></label>
+                                    <label for="" class="mb-2">Lieu</label>
                                     <input type="text" placeholder="Lieu" id="location" name="location" class="form-control">
                                     <p></p>
                                 </div>
                             </div>
 
                             <div class="mb-4">
-                                <label for="" class="mb-2">Description<span class="req">*</span></label>
+                                <label for="" class="mb-2">Description</label>
                                 <textarea class="textarea" name="description" id="description" cols="5" rows="5" placeholder="Description"></textarea>
                                 <p></p>
                             </div>
-                            <div class="mb-4">
-                                <label for="" class="mb-2">Avantages</label>
-                                <textarea class="textarea" name="benefits" id="benefits" cols="5" rows="5" placeholder="Avantages"></textarea>
-                            </div>
+                          
                             <div class="mb-4">
                                 <label for="" class="mb-2">Responsabilités</label>
                                 <textarea class="textarea" name="responsibility" id="responsibility" cols="5" rows="5" placeholder="Responsabilités"></textarea>
                             </div>
-                            <div class="mb-4">
-                                <label for="" class="mb-2">Qualifications</label>
-                                <textarea class="textarea" name="qualifications" id="qualifications" cols="5" rows="5" placeholder="Qualifications"></textarea>
-                            </div>
+                            
 
                             <div class="mb-4">
-                                <label for="" class="mb-2">Expérience <span class="req">*</span></label>
-                                <select name="experience" id="experience" class="form-control">
+                                <label for="" class="mb-2">Expérience </label>
+                                <select name="experience" id="experience" class="form-select">
                                     <option value="1">1 An</option>
                                     <option value="2">2 Ans</option>
                                     <option value="3">3 Ans</option>
@@ -113,7 +107,7 @@
 
                             <div class="row">
                                 <div class="mb-4 col-md-6">
-                                    <label for="" class="mb-2">Nom<span class="req">*</span></label>
+                                    <label for="" class="mb-2">Nom</label>
                                     <input type="text" placeholder="Nom de l'entreprise" id="company_name" name="company_name" class="form-control">
                                     <p></p>
                                 </div>
@@ -124,10 +118,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4">
-                                <label for="" class="mb-2">Site Web</label>
-                                <input type="text" placeholder="Site Web" id="website" name="website" class="form-control">
-                            </div>
+                           
                         </div>
                         <div class="card-footer p-4">
                             <button type="submit" class="btn btn-primary">Enregistrer l'emploi</button>

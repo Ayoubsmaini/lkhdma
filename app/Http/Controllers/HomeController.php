@@ -15,7 +15,16 @@ class HomeController extends Controller
 
         $newCategories = Category::where('status',1)->orderBy('name','ASC')->get();
 
-        $featuredJobs = Job::where('status',1)
+
+        return view('client.home',[
+            'categories' => $categories,
+            'newCategories' => $newCategories
+        ]);
+    }
+    public function details(){
+       
+
+         $featuredJobs = Job::where('status',1)
                         ->orderBy('created_at','DESC')
                         ->with('jobType')
                         ->where('isFeatured',1)->take(6)->get();
@@ -24,17 +33,12 @@ class HomeController extends Controller
                         ->with('jobType')
                         ->orderBy('created_at','DESC')
                         ->take(6)->get();
-
-
-
-        return view('client.home',[
-            'categories' => $categories,
-            'featuredJobs' => $featuredJobs,
-            'latestJobs' => $latestJobs,
-            'newCategories' => $newCategories
-        ]);
+                        return view('client.details',[
+                            'featuredJobs' => $featuredJobs,
+                            'latestJobs' => $latestJobs,
+                        ]);
     }
-    public function details(){
-        return view('client.details');
+    public function tarif(){
+        return view('client.tarif');
     }
 }

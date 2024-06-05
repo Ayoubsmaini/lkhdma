@@ -58,10 +58,14 @@
                             @endif
 
                             @if (Auth::check())
-                                <a href="#" onclick="applyJob({{ $job->id }})" class="btn btn-primary">Postuler</a>
+                            @if (Auth::user()->id == $job->user_id)
+                                <a href="#" class="btn btn-outline-danger disabled cursor-not-allowed">Postuler  🚫</a>
                             @else
-                                <a href="javascript:void(0);" class="btn btn-primary disabled">Connectez-vous pour postuler</a>
+                                <a href="#" onclick="applyJob({{ $job->id }})" class="btn btn-primary">Postuler</a>
                             @endif
+                        @else
+                            <a href="javascript:void(0);" class="btn btn-primary disabled">Connectez-vous pour postuler</a>
+                        @endif
                             
 
                         </div>
@@ -173,7 +177,7 @@
 @section('customJs')
 <script type="text/javascript">
 function applyJob(id){
-    if (confirm("Are you sure you want to apply on this job?")) {
+    if (confirm("Etes-vous sûr de vouloir postuler pour ce poste ?")) {
         $.ajax({
             url : '{{ route("applyJob") }}',
             type: 'post',

@@ -2,16 +2,7 @@
 
 @section('main')
 <section>
-    @if (Session::has('success'))
-        <div class="text-center alert alert-success">
-            <p class="mg-0 pb-0">{{ Session::get('success') }}</p>
-        </div>
-    @endif
-    @if (Session::has('error'))
-        <div class="text-center alert alert-danger">
-            <p class="mg-0 pb-0">{{ Session::get('error') }}</p>
-        </div>
-    @endif
+ 
     <div class="login-root">
         <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh; flex-grow: 1;">
             <div class="loginbackground box-background--white padding-top--64">

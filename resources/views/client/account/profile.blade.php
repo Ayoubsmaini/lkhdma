@@ -1,7 +1,7 @@
 @extends('client.layouts.app')
 
 @section('main')
-<section class="section-5 bg-2">
+<section class="section-5 ">
   
         <div class="row">
             <div class="col-lg-3">
@@ -33,7 +33,7 @@
                             </div>                        
                         </div>
                         <div class="card-footer  p-4">
-                            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                            <button type="submit" class="btn btn-primary">Mettre a jour</button>
                         </div>
                     </form>
                 </div>

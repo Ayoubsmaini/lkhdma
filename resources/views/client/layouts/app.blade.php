@@ -33,14 +33,28 @@
 							<a class="nav-link" aria-current="page" href="{{ route('home') }}">Accueil</a>
 						</li>   
 						<li class="nav-item">
-							<a class="nav-link" aria-current="page" href="#">Nos Services</a>
+							<a class="nav-link" aria-current="page" href="{{ route ('tarif') }}">Nos Services</a>
 						</li>   
 						<li class="nav-item">
 							<a class="nav-link" aria-current="page" href="{{ route('details') }}">Trouver un emploi</a>
 						</li>                                    
 					</ul>               
+					@if(Auth::check())
+					<a href="{{ route('account.profile') }}" class="btn btn-primary mb-3 mb-sm-0">
+						Mon Profile
+					</a>
+				@else
 					<a href="{{ route('account.createJob') }}" class="btn btn-primary mb-3 mb-sm-0">
-						Publier un Offre</a>
+						Publier un Offre
+					</a>
+				@endif
+				<div class="px-2">
+					@if(Auth::check())
+				<a href="{{ route('account.logout') }}"  class="btn btn-outline-secondary mb-3 mb-sm-0">
+               
+					Se dconnecter
+                </a>
+				@else @endif</div>
 				</div>
 			</div>
 		</nav>
